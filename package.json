@@ -1,6 +1,6 @@
 {
-  "name": "react",
-  "version": "0.0.0",
+  "name": "tb-react-counter-sieben-segment",
+  "version": "0.1.190424005",
   "private": true,
   "dependencies": {
     "react": "^16.8.3",

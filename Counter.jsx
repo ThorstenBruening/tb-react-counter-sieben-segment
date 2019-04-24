@@ -11,13 +11,13 @@ const Counter = props => {
     dispatch(action)
   }
 
-  const handleIncrement = () => {
-    const action = { type: ACTIONS.INCREMENT, payload: 1 }
+  const handlePlus = () => {
+    const action = { type: ACTIONS.PLUS, payload: 1 }
     dispatch(action)
   }
 
-  const handleDecrement = () => {
-    const action = { type: ACTIONS.DECREMENT, payload: 1 }
+  const handleMinus = () => {
+    const action = { type: ACTIONS.MINUS, payload: 1 }
     dispatch(action)
   }
 
@@ -28,9 +28,9 @@ const Counter = props => {
           
       <br />
       <br />
-      <button name="clear"      onClick={handleClear}>    Clear </button>
-      <button name="decrement"  onClick={handleDecrement}>Minus </button>
-      <button name="increment"  onClick={handleIncrement}>Plus  </button>
+      <button name="clear"  onClick={handleClear}>  Clear </button>
+      <button name="minus"  onClick={handleMinus}>  Minus </button>
+      <button name="plus"   onClick={handlePlus}>   Plus  </button>
     </div>
   )
 }

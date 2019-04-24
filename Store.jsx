@@ -1,14 +1,15 @@
 import React from "react"
 import { useReducer } from "react"
+import { useEffect }  from "react"
 
 import { createContext } from "react"
 
 export const StoreContext = createContext()
 
 export const ACTIONS = {
-  INCREMENT:    "INCREMENT",
-  DECREMENT:    "DECREMENT",
-  RESET:        "RESET"
+  PLUS:    "PLUS",
+  MINUS:   "MINUS",
+  RESET:   "RESET"
 }
 
 const reducer = (state, action) => {
@@ -17,12 +18,12 @@ const reducer = (state, action) => {
 
   switch (action.type) {
     
-    case ACTIONS.INCREMENT:
+    case ACTIONS.PLUS:
       return {
         counter: state.counter + action.payload,
       }
 
-    case ACTIONS.DECREMENT:
+    case ACTIONS.MINUS:
       return {
         counter: state.counter - action.payload,
       }
@@ -38,13 +39,17 @@ const reducer = (state, action) => {
 }
 
 const initialState = {
-  version: "0.190304.01",
+  version: "0.1.190424.05",
   loading: "true",
   counter: 0,
 }
 
 const Store = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
+
+useEffect(() => {
+  // setState({...state, loading: false})
+}, []);
 
   return (
     <StoreContext.Provider value={[state, dispatch]}>
